@@ -17,8 +17,8 @@ plt.ion()
 fig=plt.figure()
 
 ax2=fig.add_subplot(111)
-ax=fig.add_subplot(322)
-fig,(ax,ax2) =plt.subplots(2)
+'''ax=fig.add_subplot(322)
+fig,(ax,ax2) =plt.subplots(2)'''
 
 #plotting variable
 x=np.arange(0 ,2 * CHUNK, 2)
@@ -44,7 +44,7 @@ while True:
     
     data_int = np.array(struct.unpack(str(2 * CHUNK)+ 'B' ,data)).astype(dtype='b')[::2]+127 
     print(data_int)
-    line.set_ydata(data_int)
+    #line.set_ydata(data_int)
     #to set fft 
     y_fft=fft(data_unpack)
     line_fft.set_ydata(np.abs(y_fft[0:CHUNK]) *2 /(256*CHUNK))
