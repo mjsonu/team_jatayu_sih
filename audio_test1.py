@@ -17,7 +17,7 @@ stream = p_get.open(format=FORMAT,channels=CHANNELS,rate=RATE,input=True,output=
 #for static plot
 
 data=stream.read(CHUNK)
-data_int = struct.unpack(str(2 * CHUNK)+ 'B' ,data) #to convert into int
+#data_int = struct.unpack(str(2 * CHUNK)+ 'B' ,data) #to convert into int
 #to remove the discontinuity in graph and to reconstruct the graph
 data_int = np.array(struct.unpack(str(2 * CHUNK)+ 'B' ,data)).astype(dtype='b')[::2] 
 
