@@ -86,3 +86,23 @@ cv2.circle(gray8_image, (x_mouse, y_mouse), 2, (0, 0, 0), -1)
 #viridis_palette = cv2.applyColorMap(gray8_image, cv2.COLORMAP_VIRIDIS)
 #cv2.imshow("viridis", viridis_palette)
 
+
+    #cv2.imshow("ans",result)
+
+    screen1= np.concatenate((result_temp,frame2), axis=0)
+    screen2= np.concatenate((result.plot(),result_temp2), axis=0)
+
+    screen=np.concatenate((screen1,screen2),axis=1)
+    cv2.imshow("out",screen)
+    
+    cv2.setMouseCallback("out",mouse_events)
+
+
+    if cv2.waitKey(10) & 0xFF==ord("q"):
+        break
+
+cv2.imshow("out",result_temp)
+cv2.imshow("out2",plt.show())
+
+vid.release()
+cv2.destroyAllWindows
